@@ -1,0 +1,62 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <!-- Background navy -->
+  <rect width="1200" height="630" fill="#0B1F3A"/>
+  
+  <!-- Subtle grid pattern -->
+  <defs>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M 48 0 L 0 0 0 48" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  
+  <!-- Left accent bar -->
+  <rect x="0" y="0" width="6" height="630" fill="#1D6FE8"/>
+  
+  <!-- XA Logo mark -->
+  <rect x="64" y="64" width="56" height="56" rx="4" fill="#1D6FE8"/>
+  <text x="92" y="101" font-family="Georgia, serif" font-size="26" font-weight="700" fill="white" text-anchor="middle">XA</text>
+  
+  <!-- Brand name -->
+  <text x="136" y="86" font-family="Georgia, serif" font-size="22" font-weight="700" fill="white">XinAo</text>
+  <text x="236" y="86" font-family="Georgia, serif" font-size="22" font-weight="700" fill="#B8895A">.</text>
+  <text x="136" y="108" font-family="'Courier New', monospace" font-size="11" font-weight="400" fill="rgba(255,255,255,0.45)" letter-spacing="2">INTERNATIONAL TRADE CO., LTD.</text>
+  
+  <!-- WFOE badge -->
+  <rect x="64" y="152" width="248" height="28" rx="3" fill="rgba(29,111,232,0.15)" stroke="rgba(29,111,232,0.35)" stroke-width="1"/>
+  <text x="188" y="171" font-family="'Courier New', monospace" font-size="11" font-weight="700" fill="#93c5fd" text-anchor="middle" letter-spacing="1.5">REGISTERED WFOE · HANGZHOU, PRC</text>
+
+  <!-- Main headline -->
+  <text x="64" y="280" font-family="Georgia, serif" font-size="58" font-weight="700" fill="white">Your China Office.</text>
+  <text x="64" y="350" font-family="Georgia, serif" font-size="52" font-weight="300" fill="#B8895A" font-style="italic">Without the Overhead.</text>
+  
+  <!-- Subline -->
+  <text x="64" y="408" font-family="'Courier New', monospace" font-size="16" fill="rgba(255,255,255,0.55)" letter-spacing="1">ON-GROUND CONTROL  ·  LEGALLY BINDING  ·  ZERO COMPROMISE</text>
+  
+  <!-- Divider -->
+  <rect x="64" y="448" width="480" height="1" fill="rgba(255,255,255,0.1)"/>
+
+  <!-- Stats row -->
+  <text x="64" y="490" font-family="Georgia, serif" font-size="28" font-weight="700" fill="white">$0</text>
+  <text x="64" y="512" font-family="'Courier New', monospace" font-size="10" fill="rgba(255,255,255,0.4)" letter-spacing="1">MARKUPS</text>
+  
+  <text x="164" y="490" font-family="Georgia, serif" font-size="28" font-weight="700" fill="white">24h</text>
+  <text x="164" y="512" font-family="'Courier New', monospace" font-size="10" fill="rgba(255,255,255,0.4)" letter-spacing="1">RESPONSE</text>
+  
+  <text x="280" y="490" font-family="Georgia, serif" font-size="28" font-weight="700" fill="white">100%</text>
+  <text x="280" y="512" font-family="'Courier New', monospace" font-size="10" fill="rgba(255,255,255,0.4)" letter-spacing="1">TRANSPARENT</text>
+  
+  <text x="420" y="490" font-family="Georgia, serif" font-size="28" font-weight="700" fill="white">6</text>
+  <text x="420" y="512" font-family="'Courier New', monospace" font-size="10" fill="rgba(255,255,255,0.4)" letter-spacing="1">MARKETS</text>
+
+  <!-- Pricing callout right side -->
+  <rect x="740" y="200" width="400" height="240" rx="8" fill="rgba(255,255,255,0.04)" stroke="rgba(29,111,232,0.25)" stroke-width="1"/>
+  <text x="940" y="248" font-family="'Courier New', monospace" font-size="11" font-weight="700" fill="#93c5fd" text-anchor="middle" letter-spacing="2">FLAT FEE · 0% MARKUP</text>
+  <text x="940" y="298" font-family="Georgia, serif" font-size="46" font-weight="700" fill="white" text-anchor="middle">From $499</text>
+  <text x="940" y="328" font-family="'Courier New', monospace" font-size="14" fill="rgba(255,255,255,0.5)" text-anchor="middle">/month · cancel anytime</text>
+  <rect x="790" y="358" width="300" height="1" fill="rgba(255,255,255,0.08)"/>
+  <text x="940" y="390" font-family="'Courier New', monospace" font-size="11" fill="rgba(255,255,255,0.4)" text-anchor="middle" letter-spacing="1">xinaointernational.com</text>
+  
+  <!-- URL bottom right -->
+  <text x="1136" y="594" font-family="'Courier New', monospace" font-size="13" fill="rgba(255,255,255,0.3)" text-anchor="end" letter-spacing="1">xinaointernational.com</text>
+</svg>
