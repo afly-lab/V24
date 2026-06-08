@@ -75,7 +75,7 @@ body {
 .hero-img-bg {
   position: absolute;
   inset: 0;
-  background-image: url("/your-hero-photo.png");
+  background-image: url("/your-hero-photo.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
