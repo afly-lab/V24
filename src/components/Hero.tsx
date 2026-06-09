@@ -88,7 +88,30 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Photo strip — four corporate B2B images, consistent cool professional grading */}
+        {/* ─── TRUST BAR — below fold, above pre-audit ─── */}
+      <div className="trust-bar py-4">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
+            {[
+              { label: "WFOE Registered", sub: "Feb 2026 · Hangzhou, PRC" },
+              { label: "0% Commission", sub: "Raw factory invoices shared directly" },
+              { label: "Physically On-Ground", sub: "We walk into the factory for you" },
+              { label: "Legally Accountable", sub: "NDA-backed · enforceable in China" },
+              { label: "Markets Served", sub: "GCC · USA · EU · CA · AU · IN" },
+            ].map((item, i) => (
+              <div key={i} className="flex items-center gap-2 text-center md:text-left">
+                <span className="text-emerald-400 text-xs font-bold shrink-0">✓</span>
+                <div>
+                  <span className="font-mono text-[10px] uppercase tracking-wider text-white font-semibold">{item.label}</span>
+                  <span className="text-white/40 font-mono text-[10px] ml-1 uppercase tracking-wider hidden sm:inline">· {item.sub}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Photo strip — four corporate B2B images, consistent cool professional grading */}
         <div className="photo-strip relative z-10 mt-8">
           <div className="photo-strip-item">
             {/* Factory Inspection — inspector with hi-vis vest, tablet, modern assembly line */}
@@ -112,27 +135,9 @@ export default function Hero() {
           </div>
         </div>
       </section>
-
-      {/* ─── TRUST BAR — below fold, above pre-audit ─── */}
-      <div className="trust-bar py-4">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
-            {[
-              { label: "WFOE Registered", sub: "Feb 2026 · Hangzhou, PRC" },
-              { label: "0% Commission", sub: "Raw factory invoices shared directly" },
-              { label: "Physically On-Ground", sub: "We walk into the factory for you" },
-              { label: "Legally Accountable", sub: "NDA-backed · enforceable in China" },
-              { label: "Markets Served", sub: "GCC · USA · EU · CA · AU · IN" },
-            ].map((item, i) => (
-              <div key={i} className="flex items-center gap-2 text-center md:text-left">
-                <span className="text-emerald-400 text-xs font-bold shrink-0">✓</span>
-                <div>
-                  <span className="font-mono text-[10px] uppercase tracking-wider text-white font-semibold">{item.label}</span>
-                  <span className="text-white/40 font-mono text-[10px] ml-1 uppercase tracking-wider hidden sm:inline">· {item.sub}</span>
-                </div>
-              </div>
-            ))}
-          </div>
+    </>
+  );
+}
         </div>
       </div>
     </>
