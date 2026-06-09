@@ -85,10 +85,12 @@ export default function Hero() {
                 </div>
               ))}
             </div>
-          </div>
+       </div>
         </div>
 
-        {/* ─── TRUST BAR — below fold, above pre-audit ─── */}
+      </section>
+
+      {/* ─── TRUST BAR — below fold, above pre-audit ─── */}
       <div className="trust-bar py-4">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
@@ -138,8 +140,4 @@ export default function Hero() {
     </>
   );
 }
-        </div>
-      </div>
-    </>
-  );
-}
+     
