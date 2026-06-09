@@ -136,7 +136,6 @@ export default function Hero() {
             <div className="photo-strip-label">Shipment Prep</div>
           </div>
         </div>
-      </section>
     </>
   );
 }
