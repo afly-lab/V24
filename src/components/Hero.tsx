@@ -114,7 +114,7 @@ export default function Hero() {
       </div>
 
       {/* Photo strip — four corporate B2B images, consistent cool professional grading */}
-        <div className="photo-strip relative z-10 mt-8">
+        <div className="photo-strip relative z-10">
           <div className="photo-strip-item">
             {/* Factory Inspection — inspector with hi-vis vest, tablet, modern assembly line */}
             <img src="https://images.unsplash.com/photo-1601581875309-fafbf2d3ed3a?w=600&q=85" alt="Factory inspection — inspector with tablet on assembly line" loading="lazy" />
