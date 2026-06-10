@@ -114,8 +114,6 @@ export default function App() {
       {/* Hero */}
       <Hero />
 
-      {/* Trust Bar */}
-      <TrustBar />
 
       {/* FREE PRE-AUDIT TOOL */}
       <PreAuditSection />
