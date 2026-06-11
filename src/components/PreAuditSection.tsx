@@ -19,7 +19,7 @@ export default function PreAuditSection() {
     setAuditLoading(true);
     setAuditError("");
     try {
-      const response = await fetch("/api/audit", {
+      const response = await fetch("/api/audit-v2", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ productType: query })
