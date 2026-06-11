@@ -19,16 +19,6 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-let aiClient: GoogleGenAI | null = null;
-function getGeminiClient() {
-  if (!aiClient) {
-    const apiKey = process.env.GEMINI_API_KEY;
-    if (!apiKey) throw new Error("GEMINI_API_KEY is required.");
-    aiClient = new GoogleGenAI({ apiKey });
-  }
-  return aiClient;
-}
-
 const app = express();
 app.use(express.json());
 
@@ -74,9 +64,7 @@ Synthesize raw intelligence and generate a structured audit plan detailing:
   } catch (error: any) {
     res.status(500).json({ error: error.message });
   }
-  } catch (error: any) {
-    res.status(500).json({ error: error.message });
-  }
+  
 });
 
 // Inquiry API
