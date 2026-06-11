@@ -32,17 +32,22 @@ app.post("/api/audit", async (req, res) => {
     }
 
 
-    const promptText = `Analyze China supply chain sourcing parameters and risk factors for the product: "${productType}".
-You are an expert strategic sourcing partner and auditor, representing international purchasers at Chinese factories near core industrial clusters.
-Synthesize raw intelligence and generate a structured audit plan detailing:
-1. Sourcing Risk Score: High, Medium, or Low.
-2. Sourcing Risk Overview.
-3. Prime Sourcing Hubs / Clusters in China.
-4. Estimated Minimum Order Quantity (MOQ) benchmark.
-5. Estimated Target Unit Price benchmark.
-6. Necessary testing / certification compliance requirements.
-7. On-Ground physical inspection checklist items.
-8. Sourcing strategy of how XinAo International will safeguard them.`;
+   const promptText = `You are an expert China sourcing auditor. Analyze the product: "${productType}".
+
+Return ONLY a valid JSON object with exactly these fields, no extra text:
+{
+  "productName": "string",
+  "riskScore": "High" or "Medium" or "Low",
+  "riskOverview": "2-3 sentence overview of sourcing risks",
+  "manufacturingClusters": [
+    { "city": "string", "province": "string", "specialization": "string" }
+  ],
+  "moqExpectation": "string e.g. 500–1,000 units",
+  "targetPriceBenchmark": "string e.g. USD 3.50–6.00 per unit",
+  "certificationRequirements": ["string", "string"],
+  "onGroundInspectionChecklist": ["string", "string"],
+  "ourRepresentationStrategy": "2-3 sentence explanation of how XinAo International protects the buyer"
+}`;
 
     const apiKey = process.env.GEMINI_API_KEY;
 
