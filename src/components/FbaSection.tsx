@@ -30,7 +30,7 @@ export default function FbaSection() {
         {/* Background — cinematic Amazon FBA warehouse */}
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1553413077-190dd305871c?w=1600&q=85')" }}
+          style={{ backgroundImage: "url('/Amazone FBA.png')" }}
           aria-hidden="true"
         />
         {/* Dark overlay bg-black/60 */}
