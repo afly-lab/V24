@@ -1,6 +1,5 @@
 import express from "express";
 import path from "path";
-import { GoogleGenAI, Type } from "@google/genai";
 import dotenv from "dotenv";
 import nodemailer from "nodemailer";
 
@@ -42,7 +41,6 @@ app.post("/api/audit", async (req, res) => {
       return;
     }
 
-    const client = getGeminiClient();
 
     const promptText = `Analyze China supply chain sourcing parameters and risk factors for the product: "${productType}".
 You are an expert strategic sourcing partner and auditor, representing international purchasers at Chinese factories near core industrial clusters.
@@ -56,39 +54,26 @@ Synthesize raw intelligence and generate a structured audit plan detailing:
 7. On-Ground physical inspection checklist items.
 8. Sourcing strategy of how XinAo International will safeguard them.`;
 
-    const response = await client.models.generateContent({
-      model: "gemini-2.0-flash",
-      contents: promptText,
-      config: {
-        responseMimeType: "application/json",
-        responseSchema: {
-          type: Type.OBJECT,
-          properties: {
-            productName: { type: Type.STRING },
-            riskScore: { type: Type.STRING },
-            riskOverview: { type: Type.STRING },
-            manufacturingClusters: {
-              type: Type.ARRAY,
-              items: {
-                type: Type.OBJECT,
-                properties: {
-                  city: { type: Type.STRING },
-                  province: { type: Type.STRING },
-                  specialization: { type: Type.STRING }
-                }
-              }
-            },
-            moqExpectation: { type: Type.STRING },
-            targetPriceBenchmark: { type: Type.STRING },
-            certificationRequirements: { type: Type.ARRAY, items: { type: Type.STRING } },
-            onGroundInspectionChecklist: { type: Type.ARRAY, items: { type: Type.STRING } },
-            ourRepresentationStrategy: { type: Type.STRING }
-          }
-        }
-      }
-    });
+    const apiKey = process.env.GEMINI_API_KEY;
 
-    res.json(JSON.parse(response.text || "{}"));
+    const geminiRes = await fetch(
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          contents: [{ parts: [{ text: promptText }] }],
+          generationConfig: { responseMimeType: "application/json" }
+        })
+      }
+    );
+
+    const geminiData = await geminiRes.json();
+    const text = geminiData.candidates?.[0]?.content?.parts?.[0]?.text || "{}";
+    res.json(JSON.parse(text));
+  } catch (error: any) {
+    res.status(500).json({ error: error.message });
+  }
   } catch (error: any) {
     res.status(500).json({ error: error.message });
   }
