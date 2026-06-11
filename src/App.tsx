@@ -129,10 +129,10 @@ export default function App() {
 
       {/* SERVICE PHOTO STRIP — cinematic premium images */}
       <div className="photo-strip">
-        <div className="photo-strip-item"><img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&q=85" alt="Lab testing — high-tech laboratory" loading="lazy" /><div className="photo-strip-label">Lab Testing</div></div>
-        <div className="photo-strip-item"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=85" alt="Market research — data analytics dark office" loading="lazy" /><div className="photo-strip-label">Market Research</div></div>
-        <div className="photo-strip-item"><img src="https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=600&q=85" alt="Freight logistics" loading="lazy" /><div className="photo-strip-label">Freight Logistics</div></div>
-        <div className="photo-strip-item"><img src="https://images.unsplash.com/photo-1595872702557-47f88e9a2c7a?w=600&q=85" alt="Container shipping — massive cargo ship bow" loading="lazy" /><div className="photo-strip-label">Container Shipping</div></div>
+        <div className="photo-strip-item"><img src="/Lab test.png" alt="Lab testing — high-tech laboratory" loading="lazy" /><div className="photo-strip-label">Lab Testing</div></div>
+        <div className="photo-strip-item"><img src="/Market research.png" alt="Market research — data analytics dark office" loading="lazy" /><div className="photo-strip-label">Market Research</div></div>
+        <div className="photo-strip-item"><img src="/Freight.png" alt="Freight logistics" loading="lazy" /><div className="photo-strip-label">Freight Logistics</div></div>
+        <div className="photo-strip-item"><img src="/Container shipping.png" alt="Container shipping — massive cargo ship bow" loading="lazy" /><div className="photo-strip-label">Container Shipping</div></div>
       </div>
 
       {/* DETAILED SERVICES ACCORDIONS - A highly styled typographic grid */}
