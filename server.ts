@@ -9,16 +9,17 @@ dotenv.config();
 const isProduction = process.env.NODE_ENV === "production";
 const PORT = 3000;
 
-// Setup Namecheap Email Transport
-const transporter = nodemailer.createTransport({
-  host: process.env.EMAIL_HOST,
-  port: 465,
-  secure: true,
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
-  },
-});
+function getTransporter() {
+  return nodemailer.createTransport({
+    host: process.env.EMAIL_HOST || "localhost",
+    port: 465,
+    secure: true,
+    auth: {
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS,
+    },
+  });
+}
 
 const app = express();
 app.use(express.json());
