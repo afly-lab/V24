@@ -59,7 +59,7 @@ Return ONLY a valid JSON object with exactly these fields, no extra text:
         "Authorization": `Bearer ${apiKey}`
       },
       body: JSON.stringify({
-       model: "meta-llama/llama-4-scout:free",
+       model: "google/gemma-4-31b-it:free",
         messages: [{ role: "user", content: promptText }]
       })
     });
