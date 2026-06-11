@@ -242,7 +242,7 @@ export default function App() {
         {/* Background — professional contract meeting on active Chinese factory production line */}
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1600&q=85')" }}
+          style={{ backgroundImage: "url('/Negotiation.png')" }}
           aria-hidden="true"
         />
         {/* Deep dark-blue overlay — heavier on left so text is always crisp, lighter right reveals factory scene */}
