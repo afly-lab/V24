@@ -57,13 +57,14 @@ Return ONLY a valid JSON object with exactly these fields, no extra text:
         "Authorization": `Bearer ${apiKey}`
       },
       body: JSON.stringify({
-        model: "google/gemini-2.0-flash-exp:free",
+       model: "meta-llama/llama-3.1-8b-instruct:free",
         messages: [{ role: "user", content: promptText }]
       })
     });
     const orData = await orRes.json();
-    res.json({ debug: orData });
-    return;
+    const raw = orData.choices?.[0]?.message?.content || "{}";
+    const clean = raw.replace(/```json|```/g, "").trim();
+    res.json(JSON.parse(clean));
   } catch (error: any) {
     res.status(500).json({ error: error.message });
   }
