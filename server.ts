@@ -63,11 +63,14 @@ Return ONLY a valid JSON object with exactly these fields, no extra text:
     );
 
     const geminiData = await geminiRes.json();
-    const raw = geminiData.candidates?.[0]?.content?.parts?.[0]?.text || "{}";
+    console.log("Gemini raw response:", JSON.stringify(geminiData));
+    if (!geminiData.candidates || geminiData.candidates.length === 0) {
+      res.status(500).json({ error: "No candidates", debug: geminiData });
+      return;
+    }
+    const raw = geminiData.candidates[0]?.content?.parts?.[0]?.text || "{}";
     const clean = raw.replace(/```json|```/g, "").trim();
     res.json(JSON.parse(clean));
-  } catch (error: any) {
-    res.status(500).json({ error: error.message });
   }
   
 });
