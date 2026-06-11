@@ -63,6 +63,10 @@ Return ONLY a valid JSON object with exactly these fields, no extra text:
     );
 
     const geminiData = await geminiRes.json();
+    if (geminiData.error) {
+      res.status(500).json({ geminiError: geminiData.error });
+      return;
+    }
     console.log("Gemini raw response:", JSON.stringify(geminiData));
     if (!geminiData.candidates || geminiData.candidates.length === 0) {
       res.status(500).json({ error: "No candidates", debug: geminiData });
