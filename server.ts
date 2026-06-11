@@ -70,9 +70,10 @@ Return ONLY a valid JSON object with exactly these fields, no extra text:
     }
     const raw = geminiData.candidates[0]?.content?.parts?.[0]?.text || "{}";
     const clean = raw.replace(/```json|```/g, "").trim();
-    res.json(JSON.parse(clean));
+   res.json(JSON.parse(clean));
+  } catch (error: any) {
+    res.status(500).json({ error: error.message });
   }
-  
 });
 
 // Inquiry API
