@@ -57,7 +57,7 @@ Synthesize raw intelligence and generate a structured audit plan detailing:
 8. Sourcing strategy of how XinAo International will safeguard them.`;
 
     const response = await client.models.generateContent({
-      model: "gemini-1.5-flash",
+      model: "gemini-2.0-flash",
       contents: promptText,
       config: {
         responseMimeType: "application/json",
