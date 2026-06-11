@@ -73,7 +73,7 @@ Return ONLY a valid JSON object with exactly these fields, no extra text:
 });
 
 // Inquiry API
-app.post("/api/audit-v2", async (req, res) => {
+app.post("/api/inquire", async (req, res) => {
   try {
     const { name, email, subject, product, message } = req.body;
    await getTransporter().sendMail({
