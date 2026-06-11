@@ -76,7 +76,7 @@ Return ONLY a valid JSON object with exactly these fields, no extra text:
 app.post("/api/audit-v2", async (req, res) => {
   try {
     const { name, email, subject, product, message } = req.body;
-    await transporter.sendMail({
+   await getTransporter().sendMail({
       from: process.env.EMAIL_USER,
       to: process.env.EMAIL_USER,
       subject: `New Lead: ${subject}`,
