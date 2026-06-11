@@ -62,9 +62,8 @@ Return ONLY a valid JSON object with exactly these fields, no extra text:
       })
     });
     const orData = await orRes.json();
-    const raw = orData.choices?.[0]?.message?.content || "{}";
-    const clean = raw.replace(/```json|```/g, "").trim();
-    res.json(JSON.parse(clean));
+    res.json({ debug: orData });
+    return;
   } catch (error: any) {
     res.status(500).json({ error: error.message });
   }
