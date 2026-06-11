@@ -115,7 +115,7 @@ export default function FbaSection() {
         <div className="mt-16 rounded-sm overflow-hidden relative w-full min-h-[500px] flex items-center">
           <div
             className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: "url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1600&q=85')" }}
+            style={{ backgroundImage: "url('/Physical Inspection.png')" }}
             aria-hidden="true"
           />
           <div className="absolute inset-0 bg-black/60" aria-hidden="true" />
