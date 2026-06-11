@@ -95,22 +95,22 @@ export default function Hero() {
         <div className="photo-strip relative z-10 mt-6">
           <div className="photo-strip-item">
             {/* Factory Inspection — inspector with hi-vis vest, tablet, modern assembly line */}
-            <img src="https://images.unsplash.com/photo-1601581875309-fafbf2d3ed3a?w=600&q=85" alt="Factory inspection — inspector with tablet on assembly line" loading="lazy" />
+            <img src="/Factory inspection.png" alt="Factory inspection — inspector with tablet on assembly line" loading="lazy" />
             <div className="photo-strip-label">Factory Inspection</div>
           </div>
           <div className="photo-strip-item">
             {/* Warehouse Logistics — tall organised industrial racking stretching into distance */}
-            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&q=85" alt="Warehouse logistics — organised industrial racking" loading="lazy" />
+            <img src="/Warehouse Logistics.png" alt="Warehouse logistics — organised industrial racking" loading="lazy" />
             <div className="photo-strip-label">Warehouse Logistics</div>
           </div>
           <div className="photo-strip-item">
             {/* Quality Control — close-up hands using caliper on electronic components */}
-            <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=85" alt="Quality control — caliper inspection of components" loading="lazy" />
+            <img src="/Quality Control.png" alt="Quality control — caliper inspection of components" loading="lazy" />
             <div className="photo-strip-label">Quality Control</div>
           </div>
           <div className="photo-strip-item">
             {/* Shipment Prep — neatly stacked branded boxes on pallet, shrink-wrapped */}
-            <img src="https://images.unsplash.com/photo-1609709295948-17d77cb2a69b?w=600&q=85" alt="Shipment prep — uniformly stacked boxes on pallet" loading="lazy" />
+            <img src="/Shipment Prep.png" alt="Shipment prep — uniformly stacked boxes on pallet" loading="lazy" />
             <div className="photo-strip-label">Shipment Prep</div>
           </div>
         </div>
