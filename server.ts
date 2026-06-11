@@ -59,12 +59,16 @@ Return ONLY a valid JSON object with exactly these fields, no extra text:
         "Authorization": `Bearer ${apiKey}`
       },
       body: JSON.stringify({
-       model: "meta-llama/llama-3.1-8b-instruct:free",
+       model: "mistralai/mistral-7b-instruct:free",
         messages: [{ role: "user", content: promptText }]
       })
     });
-    const orData = await orRes.json();
-    const raw = orData.choices?.[0]?.message?.content || "{}";
+   const orData = await orRes.json();
+    if (!orData.choices || orData.choices.length === 0) {
+      res.set("Cache-Control", "no-store").status(500).json({ orError: orData });
+      return;
+    }
+    const raw = orData.choices[0]?.message?.content || "{}";
     const clean = raw.replace(/```json|```/g, "").trim();
    res.set("Cache-Control", "no-store").json(JSON.parse(clean));
  } catch (error: any) {
