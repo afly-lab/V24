@@ -17,7 +17,7 @@ export default function PrivateLabelSection() {
         {/* Background image */}
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=1600&q=85')" }}
+          style={{ backgroundImage: "url('/Buildyour own brand.png')" }}
           aria-hidden="true"
         />
         {/* Dark overlay — left-heavy so text column pops */}
