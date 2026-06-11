@@ -59,7 +59,7 @@ Return ONLY a valid JSON object with exactly these fields, no extra text:
         "Authorization": `Bearer ${apiKey}`
       },
       body: JSON.stringify({
-       model: "deepseek/deepseek-r1:free",
+       model: "meta-llama/llama-4-scout:free",
         messages: [{ role: "user", content: promptText }]
       })
     });
