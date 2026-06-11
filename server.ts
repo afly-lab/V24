@@ -56,16 +56,16 @@ Return ONLY a valid JSON object with exactly these fields, no extra text:
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          contents: [{ parts: [{ text: promptText }] }],
-          generationConfig: { responseMimeType: "application/json" }
+       body: JSON.stringify({
+          contents: [{ parts: [{ text: promptText }] }]
         })
       }
     );
 
     const geminiData = await geminiRes.json();
-    const text = geminiData.candidates?.[0]?.content?.parts?.[0]?.text || "{}";
-    res.json(JSON.parse(text));
+    const raw = geminiData.candidates?.[0]?.content?.parts?.[0]?.text || "{}";
+    const clean = raw.replace(/```json|```/g, "").trim();
+    res.json(JSON.parse(clean));
   } catch (error: any) {
     res.status(500).json({ error: error.message });
   }
