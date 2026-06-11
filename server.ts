@@ -49,34 +49,22 @@ Return ONLY a valid JSON object with exactly these fields, no extra text:
   "ourRepresentationStrategy": "2-3 sentence explanation of how XinAo International protects the buyer"
 }`;
 
-    const apiKey = process.env.GEMINI_API_KEY;
-
-    const geminiRes = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`,
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-       body: JSON.stringify({
-          contents: [{ parts: [{ text: promptText }] }]
-        })
-      }
-    );
-
-    const geminiData = await geminiRes.json();
-   res.status(500).json({ debug: JSON.stringify(geminiData) });
-    return;
-    if (geminiData.error) {
-      res.status(500).json({ geminiError: geminiData.error });
-      return;
-    }
-    console.log("Gemini raw response:", JSON.stringify(geminiData));
-    if (!geminiData.candidates || geminiData.candidates.length === 0) {
-      res.status(500).json({ error: "No candidates", debug: geminiData });
-      return;
-    }
-    const raw = geminiData.candidates[0]?.content?.parts?.[0]?.text || "{}";
+   const apiKey = process.env.OPENROUTER_API_KEY;
+    const orRes = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${apiKey}`
+      },
+      body: JSON.stringify({
+        model: "google/gemini-2.0-flash-exp:free",
+        messages: [{ role: "user", content: promptText }]
+      })
+    });
+    const orData = await orRes.json();
+    const raw = orData.choices?.[0]?.message?.content || "{}";
     const clean = raw.replace(/```json|```/g, "").trim();
-   res.json(JSON.parse(clean));
+    res.json(JSON.parse(clean));
   } catch (error: any) {
     res.status(500).json({ error: error.message });
   }
