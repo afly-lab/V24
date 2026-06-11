@@ -63,7 +63,8 @@ Return ONLY a valid JSON object with exactly these fields, no extra text:
     );
 
     const geminiData = await geminiRes.json();
-    if (geminiData.error) { res.status(500).json({ geminiError: geminiData.error }); return; }
+   res.status(200).json({ debug: geminiData });
+    return;
     if (geminiData.error) {
       res.status(500).json({ geminiError: geminiData.error });
       return;
