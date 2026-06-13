@@ -37,16 +37,16 @@ export default function Hero() {
             {/* H1 — DM Sans Bold (not serif) for fast readability */}
             <h1 className="font-sans text-[42px] md:text-[62px] lg:text-[72px] font-bold tracking-tight text-white mb-2 leading-[1.05]">
               Your China Office.<br />
-              <span className="font-light italic" style={{ color: "#B8895A" }}>Without the Overhead.</span>
+              <span className="font-light italic" style={{ color: "#F0B429" }}>Without the Overhead.</span>
             </h1>
 
             <div className="font-mono text-xs sm:text-sm font-bold tracking-wider uppercase mb-6 mt-1 flex items-center gap-2" style={{ color: "#B8895A" }}>
-              <span className="w-2 h-[1px]" style={{ background: "#B8895A" }} />
+              <span className="w-2 h-[1px]" style={{ background: "#F0B429" }} />
               On-Ground Control. Legally Binding. Zero Compromise.
             </div>
 
             <p className="text-lg md:text-xl text-white/70 max-w-2xl leading-relaxed mb-8 font-light">
-              <strong className="font-medium" style={{ color: "#D4A574" }}>We step past the digital listing to verify reality on the physical floor</strong> — managing your factories, verifying licenses, inspecting shipments, and negotiating direct prices. No full-time employee risk, no undisclosed agent kickbacks.
+              <strong className="font-medium" style={{ color: "#FFFFFF" }}>We step past the digital listing to verify reality on the physical floor</strong> — managing your factories, verifying licenses, inspecting shipments, and negotiating direct prices. No full-time employee risk, no undisclosed agent kickbacks.
             </p>
 
             {/* Actions — electric blue primary CTA */}
